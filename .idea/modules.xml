@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/consumer.iml" filepath="$PROJECT_DIR$/.idea/modules/consumer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/consumer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/consumer_main.iml" group="consumer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/consumer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/consumer_test.iml" group="consumer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo.iml" filepath="$PROJECT_DIR$/.idea/modules/demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/demo_main.iml" group="demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/demo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/demo_test.iml" group="demo" />
+      <module fileurl="file://$PROJECT_DIR$/producer/producer.iml" filepath="$PROJECT_DIR$/producer/producer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/producer_main.iml" filepath="$PROJECT_DIR$/.idea/modules/producer_main.iml" group="producer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/producer_test.iml" filepath="$PROJECT_DIR$/.idea/modules/producer_test.iml" group="producer" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/provider_main.iml" filepath="$PROJECT_DIR$/.idea/modules/provider_main.iml" group="provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/provider_test.iml" filepath="$PROJECT_DIR$/.idea/modules/provider_test.iml" group="provider" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-kafka-demo.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-kafka-demo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-kafka-demo_main.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-kafka-demo_main.iml" group="springboot-kafka-demo" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/springboot-kafka-demo_test.iml" filepath="$PROJECT_DIR$/.idea/modules/springboot-kafka-demo_test.iml" group="springboot-kafka-demo" />
+    </modules>
+  </component>
+</project>
