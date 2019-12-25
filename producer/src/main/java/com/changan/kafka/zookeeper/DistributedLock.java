@@ -39,6 +39,7 @@ public class DistributedLock implements Lock, Watcher {
     @Override
     public void lock() {
         if(this.tryLock()){
+            System.out.println(Thread.currentThread().getName()+"->"+CURRENT_LOCK+"获得锁");
             return;
         }
         waitForLock(WAIT_LOCK);
@@ -48,7 +49,7 @@ public class DistributedLock implements Lock, Watcher {
         try {
             Stat stat = zk.exists(prev, true);
             if(stat!=null){
-
+                System.out.println(Thread.currentThread().getName()+"等待锁"+prev+"释放");
                 countDownLatch = new CountDownLatch(1);
                 countDownLatch.await();
                 System.out.println(Thread.currentThread().getName()+"获得锁");
@@ -70,16 +71,16 @@ public class DistributedLock implements Lock, Watcher {
     public boolean tryLock() {
         try {
             //创建临时有序结点
-            CURRENT_LOCK = zk.create(ROOT_LOCK, "0".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
+            CURRENT_LOCK = zk.create(ROOT_LOCK+"/", "0".getBytes(), ZooDefs.Ids.OPEN_ACL_UNSAFE, CreateMode.EPHEMERAL_SEQUENTIAL);
 
-            System.out.println(Thread.currentThread().getName()+"--》"+CURRENT_LOCK+"尝试竞争锁");
+            System.out.println(Thread.currentThread().getName()+"-->"+CURRENT_LOCK+"尝试竞争锁");
             List<String> children = zk.getChildren(ROOT_LOCK, false);
-            TreeSet<String> treeSet = new TreeSet<>();
+            SortedSet<String> treeSet = new TreeSet<>();
             for (String child : children) {
                 treeSet.add(ROOT_LOCK + "/" + child);
             }
             String firstNode = treeSet.first();
-            SortedSet<String> lessThanMe = treeSet.headSet(CURRENT_LOCK);
+            SortedSet<String> lessThanMe = ((TreeSet<String>) treeSet).headSet(CURRENT_LOCK);
             if (CURRENT_LOCK.equals(firstNode)) {
                 return true;
             }

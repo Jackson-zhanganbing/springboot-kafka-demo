@@ -15,7 +15,7 @@ public class Test {
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-            }).start();
+            },"Thread---"+i).start();
             countDownLatch.countDown();
         }
         System.in.read();
