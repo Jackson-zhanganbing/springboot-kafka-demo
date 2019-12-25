@@ -12,7 +12,7 @@ public class ProducerController {
     private KafkaTemplate kafkaTemplate;
     @RequestMapping("/send")
     public String sendMsg(String msg){
-        kafkaTemplate.send("mytopic",msg);
+        kafkaTemplate.send("testTopic",msg);
         return msg;
     }
 }
