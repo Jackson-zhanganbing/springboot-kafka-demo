@@ -1,2 +1,3 @@
 rootProject.name = 'springboot-kafka-demo'
+include 'kafka-base'
 

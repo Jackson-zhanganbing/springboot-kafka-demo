@@ -2,6 +2,8 @@ server:
   port: 11001
 spring:
   kafka:
-    bootstrap-servers: localhost:9092
+    bootstrap-servers: http://118.24.232.124:9092,http://118.24.232.124:9093,http://118.24.232.124:9094
     consumer:
       group-id: mygroup
+      auto-offset-reset: latest
+      enable-auto-commit: true
