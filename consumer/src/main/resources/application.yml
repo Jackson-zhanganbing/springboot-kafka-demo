@@ -7,3 +7,5 @@ spring:
       group-id: mygroup
       auto-offset-reset: latest
       enable-auto-commit: true
+logging:
+  config: log4j2.xml
